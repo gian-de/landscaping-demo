@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --color-brand: #057a34;
+  --color-brand-dark: #04642b;
+  --color-lime: #c3de6d;
+  --color-lime-deep: #b4d15c;
+  --color-ink: #0e2216;
+  --color-muted: #5c6b62;
+  --color-line: #e3e7e1;
+  --color-canvas: #f5f6f4;
+  --color-mist: #f3f5f2;
+  --color-seal: #1b1b1b;
+  --color-gold: #d4b15a;
+}
+
+html {
+  font-size: 100%;
+  scroll-padding-top: 7.5rem;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-ink);
+  background: #fff;
+  text-rendering: optimizeLegibility;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+:focus-visible {
+  outline: 0.125rem solid var(--color-brand);
+  outline-offset: 0.1875rem;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -5rem;
+  z-index: 80;
+  border-radius: 0.5rem;
+  background: #fff;
+  color: var(--color-ink);
+  padding: 0.625rem 0.875rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+.field {
+  width: 100%;
+  border-radius: 0.55rem;
+  border: 1px solid transparent;
+  background: #fff;
+  color: var(--color-ink);
+  font-size: 0.9375rem;
+  line-height: 1.4;
+  padding: 0.7rem 0.8rem;
+}
+
+.field::placeholder {
+  color: #5e6b64;
+}
+
+.field:focus {
+  outline: 0.125rem solid var(--color-lime);
+  outline-offset: 0.0625rem;
+}
+
+.select-field {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 6l4 4 4-4' fill='none' stroke='%230e2216' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 0.8rem;
+  padding-right: 2rem;
+}
+
+.marquee-mask {
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.28s ease;
+}
+
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-enter-active,
+  .page-leave-active {
+    transition: none;
+  }
+}
+
+@media (scripting: none) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
